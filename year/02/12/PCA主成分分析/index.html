@@ -43,7 +43,7 @@
     
     <title>
         
-            使用python操作elasticsearch | 
+            PCA主成分分析 | 
         
         Geek Liao
     </title>
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Geek Liao">
-    <meta name="msapplication-starturl" content="http://changzeng.github.io/year/01/17/elasticsearch使用python操作/">
+    <meta name="msapplication-starturl" content="http://changzeng.github.io/year/02/12/PCA主成分分析/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Geek Liao">
@@ -230,16 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://changzeng.github.io/year/01/17/elasticsearch使用python操作/">
+    <meta property="og:url" content="http://changzeng.github.io/year/02/12/PCA主成分分析/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="使用python操作elasticsearch | Geek Liao">
+    <meta property="og:title" content="PCA主成分分析 | Geek Liao">
     <meta property="og:image" content="/img/headshow.gif">
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Wed Jan 17 2018 12:17:13 GMT+0800">
-        <meta property="article:modified_time" content="Wed Jan 17 2018 12:20:45 GMT+0800">
+        <meta property="article:published_time" content="Mon Feb 12 2018 14:20:01 GMT+0800">
+        <meta property="article:modified_time" content="Mon Feb 12 2018 16:53:16 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://changzeng.github.io/year/01/17/elasticsearch使用python操作/index.html" />
+        <link rel="canonical" href="http://changzeng.github.io/year/02/12/PCA主成分分析/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://changzeng.github.io/year/01/17/elasticsearch使用python操作/index.html",
-    "headline": "使用python操作elasticsearch",
-    "datePublished": "Wed Jan 17 2018 12:17:13 GMT+0800",
-    "dateModified": "Wed Jan 17 2018 12:20:45 GMT+0800",
+    "mainEntityOfPage": "http://changzeng.github.io/year/02/12/PCA主成分分析/index.html",
+    "headline": "PCA主成分分析",
+    "datePublished": "Mon Feb 12 2018 14:20:01 GMT+0800",
+    "dateModified": "Mon Feb 12 2018 16:53:16 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "changzeng",
@@ -346,7 +346,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#连接"><span class="post-toc-number">1.</span> <span class="post-toc-text">连接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#索引文档"><span class="post-toc-number">2.</span> <span class="post-toc-text">索引文档</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取文档"><span class="post-toc-number">3.</span> <span class="post-toc-text">获取文档</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查询文档"><span class="post-toc-number">4.</span> <span class="post-toc-text">查询文档</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除文档"><span class="post-toc-number">5.</span> <span class="post-toc-text">删除文档</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#标准差"><span class="post-toc-number">1.</span> <span class="post-toc-text">标准差</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方差"><span class="post-toc-number">2.</span> <span class="post-toc-text">方差</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#协方差"><span class="post-toc-number">3.</span> <span class="post-toc-text">协方差</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#协方差矩阵"><span class="post-toc-number">4.</span> <span class="post-toc-text">协方差矩阵</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PCA-Principal-Components-Analysis"><span class="post-toc-number">5.</span> <span class="post-toc-text">PCA(Principal Components Analysis)</span></a></li></ol>
     </ul>
     
 
@@ -378,7 +378,7 @@
         
     
             <p class="article-headline-p">
-                使用python操作elasticsearch
+                PCA主成分分析
             </p>
         </div>
 
@@ -397,7 +397,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>changzeng</strong>
-        <span>1月 17, 2018</span>
+        <span>2月 12, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -429,7 +429,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=使用python操作elasticsearch&url=http://changzeng.github.io/year/01/17/elasticsearch使用python操作/index.html&pic=http://changzeng.github.io/img/headshow.gif&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=PCA主成分分析&url=http://changzeng.github.io/year/02/12/PCA主成分分析/index.html&pic=http://changzeng.github.io/img/headshow.gif&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -438,7 +438,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=使用python操作elasticsearch&url=http://changzeng.github.io/year/01/17/elasticsearch使用python操作/index.html&via=changzeng" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=PCA主成分分析&url=http://changzeng.github.io/year/02/12/PCA主成分分析/index.html&via=changzeng" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -447,7 +447,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://changzeng.github.io/year/01/17/elasticsearch使用python操作/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://changzeng.github.io/year/02/12/PCA主成分分析/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -456,7 +456,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://changzeng.github.io/year/01/17/elasticsearch使用python操作/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://changzeng.github.io/year/02/12/PCA主成分分析/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -481,11 +481,18 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> elasticsearch <span class="keyword">import</span> Elasticsearch</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    es = Elasticsearch(</span><br><span class="line">		[<span class="string">'iad1-10202-0.es.objectrocket.com'</span>, <span class="string">'iad1-10202-1.es.objectrocket.com'</span>],</span><br><span class="line">		http_auth=(<span class="string">'YOUR_USERNAME'</span>, <span class="string">'YOUR_PASSWORD'</span>),</span><br><span class="line">		port=<span class="number">10202</span>,</span><br><span class="line">	)</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"Connected"</span>, es.info()</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> ex:</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"Error:"</span>, ex</span><br></pre></td></tr></table></figure>
-<h3 id="索引文档"><a href="#索引文档" class="headerlink" title="索引文档"></a>索引文档</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">es.index(index=<span class="string">'test_index'</span>, doc_type=<span class="string">'post'</span>, id=<span class="number">1</span>, body=&#123;</span><br><span class="line">  <span class="string">'author'</span>: <span class="string">'John Doe'</span>,</span><br><span class="line">  <span class="string">'blog'</span>: <span class="string">'Learning Elasticsearch'</span>,</span><br><span class="line">  <span class="string">'title'</span>: <span class="string">'Using Python with Elasticsearch'</span>,</span><br><span class="line">  <span class="string">'tags'</span>: [<span class="string">'python'</span>, <span class="string">'elasticsearch'</span>, <span class="string">'tips'</span>],</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="获取文档"><a href="#获取文档" class="headerlink" title="获取文档"></a>获取文档</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">es.get(index=&apos;test_index&apos;, id=&apos;1&apos;)</span><br></pre></td></tr></table></figure>
-<h3 id="查询文档"><a href="#查询文档" class="headerlink" title="查询文档"></a>查询文档</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">es.search(index=&apos;test_index&apos;, body=&#123;</span><br><span class="line">  &apos;query&apos;: &#123;</span><br><span class="line">    &apos;match&apos;: &#123;</span><br><span class="line">      &apos;title&apos;: &apos;Python&apos;,</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="删除文档"><a href="#删除文档" class="headerlink" title="删除文档"></a>删除文档</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">es.delete(index=&apos;test_index&apos;, doc_type=&apos;post&apos;, id=1)</span><br></pre></td></tr></table></figure>
+        <h3 id="标准差"><a href="#标准差" class="headerlink" title="标准差"></a>标准差</h3><p>$$s = \sqrt{\frac{\sum_{i=1}^n (X_i - \overline{X})^2}{(n - 1)}}$$</p>
+<h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><p>$$s^2 = \frac{\sum_{i=1}^n (X_i - \overline{X})^2}{(n - 1)}$$</p>
+<h3 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h3><p>$$cov(X,Y) = \frac{\sum_{i=1}^n (X_i - \overline{X})(Y_i - \overline{Y})}{(n - 1)}$$</p>
+<h3 id="协方差矩阵"><a href="#协方差矩阵" class="headerlink" title="协方差矩阵"></a>协方差矩阵</h3><p>对于协方差矩阵中的每一个元素，有：</p>
+<p>$$a_{ij} = cov(X_i, X_j)$$</p>
+<h3 id="PCA-Principal-Components-Analysis"><a href="#PCA-Principal-Components-Analysis" class="headerlink" title="PCA(Principal Components Analysis)"></a>PCA(Principal Components Analysis)</h3><ol>
+<li>去中心化。每一维度减去平均值。</li>
+<li>计算协方差矩阵。</li>
+<li>计算协方差矩阵的特征值和特征向量。</li>
+<li>按特征值大小选择特征向量。</li>
+<li>将选择的特征向量转置，左乘去中心化的元素数据就得到降维后的数据。</li>
+</ol>
 
         
     
@@ -506,7 +513,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/year/01/17/python字符串编码/" id="post_nav-newer" class="prev-content">
+        <a href="/year/02/13/Hive入门(一)/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -520,7 +527,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/year/01/16/牛顿法与拟牛顿法/" id="post_nav-older" class="next-content">
+        <a href="/year/02/12/点击率预测中的特征选择/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
@@ -612,7 +619,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">62</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">55</span></a>
             </ul>
         </li>
         

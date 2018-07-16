@@ -43,7 +43,7 @@
     
     <title>
         
-            elasticsearch同义词 | 
+            Hive入门之压缩方法 | 
         
         Geek Liao
     </title>
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Geek Liao">
-    <meta name="msapplication-starturl" content="http://changzeng.github.io/year/01/29/elasticsearch同义词/">
+    <meta name="msapplication-starturl" content="http://changzeng.github.io/year/02/15/Hive入门之压缩方法/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Geek Liao">
@@ -230,16 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://changzeng.github.io/year/01/29/elasticsearch同义词/">
+    <meta property="og:url" content="http://changzeng.github.io/year/02/15/Hive入门之压缩方法/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="elasticsearch同义词 | Geek Liao">
+    <meta property="og:title" content="Hive入门之压缩方法 | Geek Liao">
     <meta property="og:image" content="/img/headshow.gif">
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Mon Jan 29 2018 19:50:07 GMT+0800">
-        <meta property="article:modified_time" content="Tue Jan 30 2018 10:20:44 GMT+0800">
+        <meta property="article:published_time" content="Thu Feb 15 2018 02:18:42 GMT+0800">
+        <meta property="article:modified_time" content="Sat Feb 17 2018 09:10:43 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://changzeng.github.io/year/01/29/elasticsearch同义词/index.html" />
+        <link rel="canonical" href="http://changzeng.github.io/year/02/15/Hive入门之压缩方法/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://changzeng.github.io/year/01/29/elasticsearch同义词/index.html",
-    "headline": "elasticsearch同义词",
-    "datePublished": "Mon Jan 29 2018 19:50:07 GMT+0800",
-    "dateModified": "Tue Jan 30 2018 10:20:44 GMT+0800",
+    "mainEntityOfPage": "http://changzeng.github.io/year/02/15/Hive入门之压缩方法/index.html",
+    "headline": "Hive入门之压缩方法",
+    "datePublished": "Thu Feb 15 2018 02:18:42 GMT+0800",
+    "dateModified": "Sat Feb 17 2018 09:10:43 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "changzeng",
@@ -340,15 +340,6 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Simple-Expansion"><span class="post-toc-number">1.</span> <span class="post-toc-text">Simple Expansion</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Simple-Contraction-检索结果相关性下降，不可用"><span class="post-toc-number">2.</span> <span class="post-toc-text">Simple Contraction(检索结果相关性下降，不可用)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Index-size"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Index size</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Relevance"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Relevance</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Performance"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Performance</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Flexibility"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">Flexibility</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Genre-Expansion"><span class="post-toc-number">3.</span> <span class="post-toc-text">Genre Expansion</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多字同义词"><span class="post-toc-number">4.</span> <span class="post-toc-text">多字同义词</span></a></li></ol>
-    </ul>
-    
 
 
 
@@ -378,7 +369,7 @@
         
     
             <p class="article-headline-p">
-                elasticsearch同义词
+                Hive入门之压缩方法
             </p>
         </div>
 
@@ -397,7 +388,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>changzeng</strong>
-        <span>1月 29, 2018</span>
+        <span>2月 15, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -429,7 +420,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=elasticsearch同义词&url=http://changzeng.github.io/year/01/29/elasticsearch同义词/index.html&pic=http://changzeng.github.io/img/headshow.gif&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hive入门之压缩方法&url=http://changzeng.github.io/year/02/15/Hive入门之压缩方法/index.html&pic=http://changzeng.github.io/img/headshow.gif&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -438,7 +429,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=elasticsearch同义词&url=http://changzeng.github.io/year/01/29/elasticsearch同义词/index.html&via=changzeng" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hive入门之压缩方法&url=http://changzeng.github.io/year/02/15/Hive入门之压缩方法/index.html&via=changzeng" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -447,7 +438,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://changzeng.github.io/year/01/29/elasticsearch同义词/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://changzeng.github.io/year/02/15/Hive入门之压缩方法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -456,7 +447,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://changzeng.github.io/year/01/29/elasticsearch同义词/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://changzeng.github.io/year/02/15/Hive入门之压缩方法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -481,82 +472,16 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h3 id="Simple-Expansion"><a href="#Simple-Expansion" class="headerlink" title="Simple Expansion"></a>Simple Expansion</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"jump,hop,leap"</span></span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>在索引时启用拓展</th>
-<th>在查询时启用拓展</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>索引大小</td>
-<td>索引变大</td>
-<td>索引大小不变</td>
-</tr>
-<tr>
-<td>检索结果的相关性</td>
-<td>IDF一致，效果下降</td>
-<td>IDF正确</td>
-</tr>
-<tr>
-<td>性能</td>
-<td>query无需重写</td>
-<td>query需要重写</td>
-</tr>
-<tr>
-<td>灵活性</td>
-<td>灵活性低</td>
-<td>灵活性高</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Simple-Contraction-检索结果相关性下降，不可用"><a href="#Simple-Contraction-检索结果相关性下降，不可用" class="headerlink" title="Simple Contraction(检索结果相关性下降，不可用)"></a>Simple Contraction(检索结果相关性下降，不可用)</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"leap,hop =&gt; jump"</span></span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>索引大小</td>
-<td>不变</td>
-</tr>
-<tr>
-<td>检索结果的相关性</td>
-<td>下降</td>
-</tr>
-<tr>
-<td>检索性能</td>
-<td>提高</td>
-</tr>
-<tr>
-<td>灵活性</td>
-<td>提高</td>
-</tr>
-</tbody>
-</table>
-<h4 id="Index-size"><a href="#Index-size" class="headerlink" title="Index size"></a>Index size</h4><p>⬆︎ The index size is normal, as only a single term is indexed.</p>
-<h4 id="Relevance"><a href="#Relevance" class="headerlink" title="Relevance"></a>Relevance</h4><p>⬇︎ The IDF for all terms is the same, so you can’t distinguish between more commonly used words and less commonly used words.</p>
-<h4 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h4><p>⬆︎ A query needs to find only the single term that appears in the index.</p>
-<h4 id="Flexibility"><a href="#Flexibility" class="headerlink" title="Flexibility"></a>Flexibility</h4><p>⬆︎ New synonyms can be added to the left side of the rule and applied at query time. For instance, imagine that we wanted to add the word <code>bound</code> to the rule specified previously. The following rule would work for queries that contain <code>bound</code> or for newly added documents that contain <code>bound</code>:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"leap,hop,bound =&gt; jump"</span></span><br></pre></td></tr></table></figure>
-<p>But we could expand the effect to also take into account <em>existing</em> documents that contain <code>bound</code> by writing the rule as follows:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"leap,hop,bound =&gt; jump,bound"</span></span><br></pre></td></tr></table></figure>
-<p>When you reindex your documents, you could revert to the previous rule to gain the performance benefit of querying only a single term.</p>
-<h3 id="Genre-Expansion"><a href="#Genre-Expansion" class="headerlink" title="Genre Expansion"></a>Genre Expansion</h3><p>Genre expansion is quite different from simple contraction or expansion. Instead of treating all synonyms as equal, genre expansion widens the meaning of a term to be more generic. Take these rules, for example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;cat    =&gt; cat,pet&quot;,</span><br><span class="line">&quot;kitten =&gt; kitten,cat,pet&quot;,</span><br><span class="line">&quot;dog    =&gt; dog,pet&quot;</span><br><span class="line">&quot;puppy  =&gt; puppy,dog,pet&quot;</span><br></pre></td></tr></table></figure>
-<p>By applying genre expansion at index time:</p>
-<ul>
-<li>A query for <code>kitten</code> would find just documents about kittens.</li>
-<li>A query for <code>cat</code> would find documents abouts kittens and cats.</li>
-<li>A query for <code>pet</code> would find documents about kittens, cats, puppies, dogs, or pets.</li>
-</ul>
-<h3 id="多字同义词"><a href="#多字同义词" class="headerlink" title="多字同义词"></a>多字同义词</h3>
+        <ol>
+<li><p>压缩的原因</p>
+<p>Hive 最终是转为 MapReduce 程序来执行的，而 MapReduce 的性能瓶颈在于网络 IO 和磁盘 IO，要 解决性能瓶颈，最主要的是减少数据量，对数据进行压缩是个好的方式。</p>
+<p>压缩虽然是减少了数据量，但是压缩过程要消耗 CPU 的，但是在 Hadoop 中，往往性能瓶颈不在 于 CPU，CPU 压力并不大，所以压缩充分利用了比较空闲的 CPU。</p>
+</li>
+<li><p>Hadoop常用压缩方法</p>
+<p>| 压缩格式   | 是否可拆分 | 是否自带 | 压缩率  | 速度   | 是否Hadoop自带 |<br>| —— | —– | —- | —- | —- | ———- |<br>| gzip   | 否     | 否    | 很高   | 比较快  | 是          |<br>| lzo    | 是     | 是    | 比较高  | 很快   | 否，需要安装     |<br>| snappy | 否     | 是    | 比较高  | 很快   | 否，需要安装     |<br>| bzip2  | 是     | 否    | 最高   | 慢    | 是          |</p>
+</li>
+</ol>
+
         
     
 
@@ -576,21 +501,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/year/01/30/短文本分类/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/year/01/28/crf和hmm比较/" id="post_nav-older" class="next-content">
+        <a href="/year/02/15/Hadoop之数据存储方式/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
@@ -682,7 +599,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">62</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">55</span></a>
             </ul>
         </li>
         
