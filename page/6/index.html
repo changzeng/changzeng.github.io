@@ -1,1306 +1,1990 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="zh">
-    <head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.5.2 -->
-    <script>
-        window.materialVersion = "1.5.2"
-        // Delete localstorage with these tags
-        window.oldVersion = [
-            'codestartv1',
-            '1.3.4',
-            '1.4.0',
-            '1.4.0b1',
-            '1.5.0'
-        ]
-    </script>
-
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!-- Title -->
-    
-    <title>
-        
-        Geek Liao
-    </title>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/headshow.gif">
-    <link rel="icon" href="/img/headshow.gif">
-
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
-    <meta name="theme-color" content="#0097A7">
-
-    <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
-
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
-
-    <!-- Import CSS -->
-    
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-        
-
-    
-
-    
-
-    <!-- Config CSS -->
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    overflow-x: hidden !important;
-  }
   
-  code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
-
-  a {
-    color: #00838F;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #0097A7 !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #0097A7 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #0097A7 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-
-</style>
 
 
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-        background-color: #fff;
-      }
-    </style>
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
 
 
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-
-<!-- Import Material Icons -->
-
-
-    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
 
 
 
-    <!-- Import jQuery -->
-    
-        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
-    
 
-    <!-- WebAPP Icons -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Geek Liao">
-    <meta name="msapplication-starturl" content="http://changzeng.github.io/page/6/">
-    <meta name="msapplication-navbutton-color" content="#0097A7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Geek Liao">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="/img/headshow.gif">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <!-- Site Verification -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
     
+  
 
-    <!-- RSS -->
-    
+  
 
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://changzeng.github.io/page/6/">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="Geek Liao">
-    <meta property="og:image" content="/img/headshow.gif">
-    <meta property="og:description" content="">
-    
+  
 
-    
+  
 
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:card" content="summary_large_image">
+  
 
-    <!-- Add canonical link for SEO -->
+  
     
-        <link rel="canonical" href="http://changzeng.github.io/page/6/index.html" />
     
-
-    <!-- Structured-data for SEO -->
-    
-        
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
-    
 
-    <!-- Analytics -->
-    
-    
-    
 
-    <!-- Custom Head --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-    
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Geek Liao">
+<meta property="og:url" content="http://changzeng.github.io/page/6/index.html">
+<meta property="og:site_name" content="Geek Liao">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Geek Liao">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://changzeng.github.io/page/6/"/>
+
+
+
+
+
+  <title>Geek Liao</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
+  
+  
     
-        <body id="scheme-Paradox" class="lazy">
-            <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
+  
 
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
 
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/year/01/14/常用激活函数/">常用激活函数</a></p>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Geek Liao</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            ...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/year/01/14/常用激活函数/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/headshow.gif" width="44px" height="44px" alt="changzeng's avatar">
-            </div>
-            <div>
-                <strong>changzeng</strong>
-                <span>1月 14, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/machine-learning/">machine learning</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/year/01/14/SVM/">SVM</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            松弛变量
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/year/01/14/SVM/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/headshow.gif" width="44px" height="44px" alt="changzeng's avatar">
-            </div>
-            <div>
-                <strong>changzeng</strong>
-                <span>1月 14, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/machine-learning/">machine learning</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/year/01/14/FM与SVM/">FM与SVM</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/year/01/14/FM与SVM/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/headshow.gif" width="44px" height="44px" alt="changzeng's avatar">
-            </div>
-            <div>
-                <strong>changzeng</strong>
-                <span>1月 14, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/machine-learning/">machine learning</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/year/01/14/点击率预测模型/">点击率预测模型</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/year/01/14/点击率预测模型/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/headshow.gif" width="44px" height="44px" alt="changzeng's avatar">
-            </div>
-            <div>
-                <strong>changzeng</strong>
-                <span>1月 14, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/machine-learning/">machine learning</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/year/01/14/FM模型/">FM模型</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            FM(Factorization Machine)是一种特征组合的算法。目的是为了解决数据稀疏的情况下，特征怎样组合的问题。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/year/01/14/FM模型/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/headshow.gif" width="44px" height="44px" alt="changzeng's avatar">
-            </div>
-            <div>
-                <strong>changzeng</strong>
-                <span>1月 14, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/machine-learning/">machine learning</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/year/01/14/生成模型和判别模型/">生成模型和判别模型</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            generative algorithm models how the data was generated in...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/year/01/14/生成模型和判别模型/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/headshow.gif" width="44px" height="44px" alt="changzeng's avatar">
-            </div>
-            <div>
-                <strong>changzeng</strong>
-                <span>1月 14, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/machine-learning/">machine learning</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/year/01/14/朴素贝叶斯和逻辑回归/">朴素贝叶斯 VS 逻辑回归</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-Naive Bayes是一个生成模型，在计算P(y|x)之前，先要从训练数据中计算P(x|y)和P(y)的概率，从而利用贝叶斯公式...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/year/01/14/朴素贝叶斯和逻辑回归/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/headshow.gif" width="44px" height="44px" alt="changzeng's avatar">
-            </div>
-            <div>
-                <strong>changzeng</strong>
-                <span>1月 14, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/machine-learning/">machine learning</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/year/01/14/感知机、线性回归、逻辑回归/">感知机、线性回归、逻辑回归</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            感知机、线性回归、逻辑回归是三中和容易混淆的模型，三者的主要区别在于激活函数的选择。
-对于感知机来说，它的激活函数为：
-...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/year/01/14/感知机、线性回归、逻辑回归/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/headshow.gif" width="44px" height="44px" alt="changzeng's avatar">
-            </div>
-            <div>
-                <strong>changzeng</strong>
-                <span>1月 14, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/machine-learning/">machine learning</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/year/01/14/逻辑回归/">逻辑回归</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            简介逻辑回归(Lo...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/year/01/14/逻辑回归/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/headshow.gif" width="44px" height="44px" alt="changzeng's avatar">
-            </div>
-            <div>
-                <strong>changzeng</strong>
-                <span>1月 14, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/machine-learning/">machine learning</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/year/01/14/梯度下降与随机梯度下降的异同/">梯度下降、随机梯度下降、批梯度下降</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            介绍最近，看了斯坦...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/year/01/14/梯度下降与随机梯度下降的异同/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/headshow.gif" width="44px" height="44px" alt="changzeng's avatar">
-            </div>
-            <div>
-                <strong>changzeng</strong>
-                <span>1月 14, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/deep-learning/">deep learning</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/page/5/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
-</script>
-
-    
-</div>
-
-
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
     </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/headshow.gif" alt="changzeng's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        lcznotme@sina.cn
-        <b class="caret"></b>
-    </a>
+  </div>
 </div>
 
+<nav class="site-nav">
+  
 
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="#" target="_blank" title="Email Me">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                主页
-            </a>
-        </li>
+  
+    <ul id="menu" class="menu">
+      
         
-    
-
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">55</span></a>
-            </ul>
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
         </li>
+      
         
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
     
+      
 
-    <!-- Categories  -->
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/15/经典DP-Levenshtein距离/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
     
+      <header class="post-header">
 
-    <!-- Pages  -->
-    
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/15/经典DP-Levenshtein距离/" itemprop="url">经典DP-Levenshtein距离</a></h1>
+        
 
-    <!-- Article Number  -->
-    
-</ul>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-15T13:45:21+08:00">
+                2018-01-15
+              </time>
+            
 
+            
 
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
+            
+          </span>
 
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/dynamic-programing/" itemprop="url" rel="index">
+                    <span itemprop="name">dynamic programing</span>
+                  </a>
+                </span>
 
-<!-- Sidebar Divider -->
+                
+                
+              
+            </span>
+          
 
-    <div class="sidebar-divider"></div>
+          
+            
+          
 
+          
+          
 
-<!-- Theme Material -->
+          
 
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            主题 - Material
-            <span class="sidebar-badge badge-circle">i</span>
+          
+
+          
+
         </div>
-    </a>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p><a href="https://en.wikipedia.org/wiki/Levenshtein_distance" target="_blank" rel="noopener">Levenshtein距离</a>是一种计算两个字符串间的差异程度的字符串度量（string metric）。我们可以认为Levenshtein距离就是从一个字符串修改到另一个字符串时，其中编辑单个字符（比如修改、插入、删除）所需要的最少次数。俄罗斯科学家<a href="https://en.wikipedia.org/wiki/Vladimir_Levenshtein" target="_blank" rel="noopener">Vladimir Levenshtein</a>于1965年提出了这一概念。</p>
+<h3 id="转移方程"><a href="#转移方程" class="headerlink" title="转移方程"></a>转移方程</h3><p>$$lev<em>{A,B}(i,j) = \begin{cases} i &amp;, j = 0 \ j &amp;, i = 0 \ min\begin{cases} lev</em>{a,b}(i, j-1) + 1 \ lev<em>{a,b}(i-1, j) + 1 \ lev</em>{a,b}(i-1,j-1)+1,(a_i \ne b_i) \end{cases} &amp;, otherwise \end{cases}$$</p>
+<h3 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">levenshtein</span><span class="params">(str_a, str_b)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">charAt</span><span class="params">(s, i)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> s[i<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">    dp = [[<span class="number">0</span>]*(len(str_b)+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(str_a)+<span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(str_a)+<span class="number">1</span>):</span><br><span class="line">        dp[i][<span class="number">0</span>] = i</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(str_b)+<span class="number">1</span>):</span><br><span class="line">        dp[<span class="number">0</span>][i] = i</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(str_a)+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, len(str_b)+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> charAt(str_a, i) == charAt(str_b, j):</span><br><span class="line">                dp[i][j] = dp[i<span class="number">-1</span>][j<span class="number">-1</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dp[i][j] = min(dp[i<span class="number">-1</span>][j], dp[i][j<span class="number">-1</span>], dp[i<span class="number">-1</span>][j<span class="number">-1</span>])+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dp[len(str_a)][len(str_b)]</span><br></pre></td></tr></table></figure>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="http://www.cnblogs.com/BlackStorm/p/5400809.html" target="_blank" rel="noopener">字符串编辑距离（Levenshtein距离）算法</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-<!-- Help & Support -->
-<!--
+    
+      
 
--->
+  
 
-<!-- Feedback -->
-<!--
+  
+  
+  
 
--->
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/15/query粗排/">
 
-<!-- About Theme -->
-<!--
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
 
--->
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/15/query粗排/" itemprop="url">query结果粗排</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-15T11:56:41+08:00">
+                2018-01-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/chat-bot/" itemprop="url" rel="index">
+                    <span itemprop="name">chat bot</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>槽位(slot)是在query中提取的用户意图信息，槽位对于结果的排序是至关重要的。槽位是对用户表达的一种抽象，它的字面意思可能与用户表达一致也可能不一致。</p>
+<h3 id="如果一致"><a href="#如果一致" class="headerlink" title="如果一致"></a>如果一致</h3><p>如果一致或者基本一致，那么使用字面意思进行检索出的结果会存在一定相关性。</p>
+<h3 id="如果不一致"><a href="#如果不一致" class="headerlink" title="如果不一致"></a>如果不一致</h3><p>如果字面意思不一致的情况下任然使用字面意思进行检索，则会导致大量不相关的结果。所以如果字面意思不一致，则不能直接进行检索。</p>
+<h5 id="使用Levenshtein距离表示相似度"><a href="#使用Levenshtein距离表示相似度" class="headerlink" title="使用Levenshtein距离表示相似度"></a>使用Levenshtein距离表示相似度</h5><p>如果Levenshtein距离较小则二者相似，否则不相似。</p>
+<p>boost_minus 2.0 2.2</p>
+<h3 id="同义词"><a href="#同义词" class="headerlink" title="同义词"></a>同义词</h3><p>押金 保证金 条子 押金条 本金条 押金条子 本金条子<br>取消 撤销 终止 退回</p>
+<h3 id="去掉槽位的下划线"><a href="#去掉槽位的下划线" class="headerlink" title="去掉槽位的下划线"></a>去掉槽位的下划线</h3><h3 id="分值调整"><a href="#分值调整" class="headerlink" title="分值调整"></a>分值调整</h3><p>怎么办 可不可以 行不行 能不能 好不好 有没有用 能不能行 如何 降低分值</p>
+<h3 id="去一些停用词"><a href="#去一些停用词" class="headerlink" title="去一些停用词"></a>去一些停用词</h3><p>我想问下 我 的 你好 你 你们 大家 请问 一下 告诉我 回答我<br>停用槽位：数字</p>
+<h3 id="加词性"><a href="#加词性" class="headerlink" title="加词性"></a>加词性</h3><p>动词权重提高 e.g 取消</p>
+<h3 id="槽位-tf-idf"><a href="#槽位-tf-idf" class="headerlink" title="槽位 tf-idf"></a>槽位 tf-idf</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/14/经济学/对冲基金/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/14/经济学/对冲基金/" itemprop="url">对冲基金</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-14T23:23:32+08:00">
+                2018-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/经济学/" itemprop="url" rel="index">
+                    <span itemprop="name">经济学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Mike同学看到搞金融的都巨赚钱，也想创一个对冲基金玩玩，于是他去了高盛提出申请，高盛的Sam大叔说，好，想搞基没问题，我们这里没啥规矩，但得满足唯一一个条件，你得确保65%以上的投资者都得是有钱人，就算不是盖茨、焦不思之流，好歹也得身价百万，年入20W刀以上吧，否则搞个毛线，你无所谓穷人死活，美帝政府还在乎呢，<strong>这第一个特征，叫Accredited Investor。</strong></p>
+<p>走出银行，Mike同学觉得世界都是美好滴，不过等等，钱呢？他找到了盖茨，盖茨说，你要我投你钱？你说得那么好听，自己投了多少钱进去？你自己都不敢投钱进自己的基金，我怎么相信你？Mike同学觉得在理，把心一横，拿出自己所有家底400万刀，投入自己的基金。盖茨一看，这熊孩子那么霸气，应该是有点真本事吧，那我不如也投个几百万玩玩吧。<strong>这第二个特征，叫Large Personal Stake。</strong></p>
+<p>Mike再一想，光有这个超级富豪投资者钱还不够啊，隔壁星巴克端盘子的Jack倒是也想玩投资，这种拿着一万两万的平头老百姓要投我这基金，我受还是不受呢？不行，第一我这里人手也不够，一个个处理小客户要累死。第二为了这点小钱和那么多人打交道也太麻烦了，第三我还是想要大钱啊，几百万几百万的投我，我的基金才能迅速发展壮大。所以宁缺毋滥，还是针对有钱人吧，最低限，要投我基金的，100万刀起，少了我看不上。<strong>这第三个特征，叫High Minimum。</strong></p>
+<p>好了，客户都招到了，基金规模4000万，Mike心里这个美啊，不过还是得防一手，有个投资者Kevin，臭名昭著，经常投资了以后过个礼拜就撤资逗别人玩，好歹也是几百万啊，我这在市场里来来回回倒腾，想要我亲命啊，所以定个规矩，投了我的基金，第一年你就别想取出来，是死是活全在我，<strong>这第四个特征，叫First Year Lock-In。</strong></p>
+<p>光这还不够，一年以内安全了，一年以后呢？到时候客户想什么时候撤资什么时候撤资，Mike不是麻烦死？所以一年只有指定的几个日子可以撤资（也可能一年一度），到日子了提前给客户发个邮件提醒他们有这个事，撤资日到了啊，要撤资快撤资，过了这个村就没这个店了哟，有意向的提前告诉我们先。<strong>这第五个特征，叫Infrequent Redemption。</strong></p>
+<p>钱的问题解决了，Mike想，好吧，总算开始投资玩了啊，作为一只“对冲鸡”，别以为这真的和对冲有什么必然联系，这只是历史遗留的命名问题，作为对冲基金，只是限制少多了，<strong>有自由</strong>用各种投资策略，什么Long/Short，Event Driven，Global Macro，Distressed Securities，要多刺激有多刺激，还有，我能投资股票，债券，CDS，众多稀奇古怪的衍生品，想怎么玩怎么玩。<strong>这第六个特征，叫Variety of Investments。（没人说对冲基金不能单纯买点股票搞价值投资，和公募一个路数哦。）</strong></p>
+<p>最爽的部分来了，收钱！Mike同学累死累活（或者装得累死累活）搞投资，不就是为了最后的分红吗，如果赚钱了，我要在赚钱部分分20%，如果不赚钱，我也不能白干啊，这场地费，人工费，我的跑腿费辛苦费，好歹也得一年收个2%吧。这规则差不多算行规了，大部分对冲基金都有类似的收钱规矩。<strong>这第七个特征，叫 2 / 20 Gains。</strong></p>
+<p>Mike看着别人家基金都动辄上亿，耐不住寂寞，就4000万规模的基金还不够别人塞牙缝的，于是去和银行的Sam大叔说，你借我点钱吧，我有个绝妙点子，保证赚大钱。Sam倒是个好说话的人，二话不说批了2亿刀给Mike，这个叫5:1的杠杆。于是乎，<strong>这第八个特征，叫Leverage。</strong></p>
+<p><strong>基本上，大部分对冲基金，都包含上述8个特征，符合这些情况的，就是对冲基金，而非字面上“采用对冲策略的基金”。</strong></p>
+<p>最后讲一个大多数人的误解，觉得对冲基金这东西如何恐怖，比如金融危机的时候，新闻里动不动对冲基金导致股指大跌！这种耸动的结果一般是如何造成的呢，<strong>大部分情况主要是第五和第八特征共同作用导致的。</strong>一年就那么几个撤资日，遇上恐慌性时期，比如雷曼垮台啊，欧债危机啊，一到日子客户就集体撤资，对冲基金没办法只好短时间不计成本地平仓……考虑到对冲基金一般是高杠杆，你就明白这意味着什么了。</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p><a href="https://www.zhihu.com/question/19902214/answer/15117313" target="_blank" rel="noopener">知乎：陈思荣</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/14/常用激活函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/14/常用激活函数/" itemprop="url">常用激活函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-14T21:35:14+08:00">
+                2018-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Sigmoid函数"><a href="#Sigmoid函数" class="headerlink" title="Sigmoid函数"></a>Sigmoid函数</h3><center><img src="/img/posts/sigmoid.png" alt=""></center>
+
+<p>Sigmoid函数的定义域为$(-\infty,\infty)$,值域为[0,1]。由于sigmoid函数其强大的解释力，在历史上被最经常地用来表示神经元的活跃度：从不活跃（0）到假设上最大的（1）。在实践中，sigmoid函数最近从受欢迎到不受欢迎，很少再被使用。它有两个主要缺点：</p>
+<ol>
+<li>sigmoid过饱和、丢失了梯度。sigmoid神经元的一个很差的属性就是神经元的活跃度在0和1处饱和，它的梯度在这些地方接近于0。回忆在反向传播中，某处的梯度和其目标输出的梯度相乘，以得到整个目标。因此，如果某处的梯度过小，就会很大程度上干掉梯度，使得几乎没有信号经过这个神经元以及所有间接经过此处的数据。除此之外，人们必须额外注意sigmoid神经元权值的初始化来避免饱和。例如，当初始权值过大，几乎所有的神经元都会饱和以至于网络几乎不能学习。</li>
+<li>sigmoid的输出不是零中心的。这个特性会导致后面网络层的输入也不是零中心的，进而影响梯度下降的运作。因为如果输入都是正数的话（如 $f=w^{T}x+b$ 中每个元素都 $x&gt;0$ ），那么关于 $w$ 的梯度在反向传播过程中，要么全是正数，要么全是负数（具体依据整个表达式 $f$ 而定），这将会导致梯度下降权重更新时出现 z 字型的下降。当然，如果是按 batch 去训练，那么每个 batch 可能得到不同的信号，整个批量的梯度加起来后可以缓解这个问题。因此，该问题相对于上面的神经元饱和问题来说只是个小麻烦，没有那么严重。</li>
+</ol>
+<p>所以总的来说Sigmoid神经元的缺点就是收敛慢。</p>
+<h3 id="tanh函数"><a href="#tanh函数" class="headerlink" title="tanh函数"></a>tanh函数</h3><center><img src="/img/posts/tanh.gif" alt=""></center>
+
+<p>tanh 函数同样存在饱和问题，但它的输出是零中心的，因此实际中 tanh 比 sigmoid 更受欢迎。</p>
+<p>实际上来说，tanh 函数是一个放大的 sigmoid 函数，数学关系为：$$\tanh \left( x\right) =2\sigma \left( 2x\right) -1$$</p>
+<p>但是由于输出是零中心的，所以它的收敛速度比sigmoid更快。</p>
+<h3 id="ReLU函数"><a href="#ReLU函数" class="headerlink" title="ReLU函数"></a>ReLU函数</h3><center><img src="/img/posts/ReLU.jpeg" alt=""></center>
+
+<p>ReLU 近些年来非常流行。它的数学公式为：</p>
+<p>$$f\left( x\right) =\max \left( 0,x\right) $$</p>
+<p>ReLU的优点：</p>
+<ol>
+<li><p>相较于 sigmoid 和 tanh 函数， ReLU 对于 SGD 的收敛有巨大的加速作用（<a href="http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf" target="_blank" rel="noopener">Alex Krizhevsky</a> 指出有 6 倍之多）。有人认为这是由它的线性、非饱和的公式导致的(图中虚线为sigmoid函数，实线为ReLU函数)。</p>
+<center><img src="/img/posts/ReLU_performance.jpeg" alt=""></center>
+</li>
+<li><p>相比于 sigmoid/tanh ， ReLU 只需要一个阈值就可以得到激活值，而不用去算一大堆复杂的（指数）运算。</p>
+</li>
+</ol>
+<p>ReLU的缺点就是，它在训练时比较脆弱并且<strong>可能“死掉”</strong>。但是死掉的细胞反过来又能是整个网络避免过拟合，但是如果整个网络的绝大部分细胞都失活的话，效果也有可能会降低。</p>
+<p>举例来说：一个非常大的梯度经过一个 ReLU 神经元，更新过参数之后，这个神经元再也不会对任何数据有激活现象了。如果这种情况发生，那么从此所有流过这个神经元的梯度将都变成 0 。</p>
+<p>也就是说，这个 ReLU 单元在训练中将不可逆转的死亡，导致了数据多样化的丢失。实际中，如果学习率设置得太高，可能会发现网络中 40% 的神经元都会死掉（在整个训练集中这些神经元都不会被激活）。</p>
+<p>合理设置学习率，会降低这种情况的发生概率。</p>
+<h3 id="Leaky-ReLU"><a href="#Leaky-ReLU" class="headerlink" title="Leaky ReLU"></a>Leaky ReLU</h3><p>Leaky ReLU 是为解决“ ReLU 死亡”问题的尝试。</p>
+<p>ReLU 中当 x&lt;0 时，函数值为 0 。而 Leaky ReLU 则是给出一个很小的负数梯度值，比如 0.01 。</p>
+<center><img src="/img/posts/leaky_ReLU.png" alt=""></center>
+
+<p>有些研究者的论文指出这个激活函数表现很不错，但是其效果并不是很稳定。</p>
+<p>Kaiming He 等人在 2015 年发布的论文 <a href="https://link.zhihu.com/?target=http%3A//arxiv.org/abs/1502.01852" target="_blank" rel="noopener">Delving Deep into Rectifiers</a> 中介绍了一种新方法 PReLU ，把负区间上的斜率当做每个神经元中的一个参数来训练。然而该激活函数在在不同任务中表现的效果也没有特别清晰。</p>
+<h3 id="Maxout"><a href="#Maxout" class="headerlink" title="Maxout"></a>Maxout</h3><p>一般来说，神经细胞的激活函数有如下形式：</p>
+<p>$$h^{(i)}(x) = f(x^TW^{(i)} + b^{(i)})$$</p>
+<p>也就是说普通的神经细胞的权值矩阵$W^{(i)}$是二维的，而Maxout神经细胞则不同，它的激活函数有如下形式：</p>
+<p>$$\begin{align}h<em>i &amp;= max</em>{j\in[1,k]} z<em>{ij} \ where \space z</em>{ij} &amp;= x^TW<em>{ij} + b</em>{ij}, and \space W \in R^{d,m,k} \end{align}$$</p>
+<p>所以Maxout神经细胞的激活函数是三维的，比起普通的神经细胞来说Maxout神经细胞有更多的参数，更容易过拟合。</p>
+<p>但是Maxout 神经元就拥有 ReLU 单元的所有优点（线性和不饱和），而没有它的缺点（死亡的 ReLU 单元）。然而和 ReLU 对比，它每个神经元的参数数量增加了一倍，这就导致整体参数的数量激增。</p>
+<h3 id="如何选择激活函数"><a href="#如何选择激活函数" class="headerlink" title="如何选择激活函数"></a>如何选择激活函数</h3><p>通常来说，很少会把各种激活函数串起来在一个网络中使用的。</p>
+<p>如果使用 ReLU ，那么一定要小心设置 learning rate ，而且要注意不要让你的网络出现很多 “ dead ” 神经元，如果这个问题不好解决，那么可以试试 Leaky ReLU 、 PReLU 或者 Maxout。</p>
+<p>最好不要用 sigmoid ，可以试试 tanh ，不过可以预期它的效果会比不上 ReLU 和 Maxout。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="http://blog.csdn.net/csuhoward/article/details/52538296" target="_blank" rel="noopener">激活函数的区别优缺点对照</a></li>
+<li><a href="https://www.v2ex.com/t/340003" target="_blank" rel="noopener">常用激活函数的总结与比较</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/14/SVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/14/SVM/" itemprop="url">SVM</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-14T21:34:49+08:00">
+                2018-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="松弛变量"><a href="#松弛变量" class="headerlink" title="松弛变量"></a>松弛变量</h3><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="http://blog.csdn.net/qll125596718/article/details/6910921" target="_blank" rel="noopener">SVM学习（五）：松弛变量与惩罚因子</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/14/FM与SVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/14/FM与SVM/" itemprop="url">FM与SVM</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-14T21:13:32+08:00">
+                2018-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/14/点击率预测模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/14/点击率预测模型/" itemprop="url">点击率预测模型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-14T19:24:00+08:00">
+                2018-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/14/FM模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/14/FM模型/" itemprop="url">FM模型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-14T19:23:18+08:00">
+                2018-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>FM(Factorization Machine)是一种特征组合的算法。目的是为了解决数据稀疏的情况下，特征怎样组合的问题。</p>
+<h3 id="特征组合"><a href="#特征组合" class="headerlink" title="特征组合"></a>特征组合</h3><p>普通的线性模型，我们都是将各个特征独立考虑的，并没有考虑到特征与特征之间的相互关系。但实际上，大量的特征之间是有关联的。最简单的以电商为例，一般女性用户看化妆品服装之类的广告比较多，而男性更青睐各种球类装备。那很明显，女性这个特征与化妆品类服装类商品有很大的关联性，男性这个特征与球类装备的关联性更为密切。如果我们能将这些有关联的特征找出来，显然是很有意义的。</p>
+<p>一般的线性模型为： </p>
+<p>$$y = \omega<em>0 + \sum</em>{i=1}^{n} \omega_i  x_i$$</p>
+<p>从上面的式子很容易看出，一般的线性模型压根没有考虑特征间的关联。为了表述特征间的相关性，我们采用多项式模型。在多项式模型中，特征$x_i$与$x_j$的组合用$x_ix_j$表示。为了简单起见，我们讨论二阶多项式模型。具体的模型表达式如下：</p>
+<p>$$ y = \omega<em>0 + \sum</em>{i=1}^{n} \omega_i  x<em>i + \sum</em>{i=1}^{n-1}\sum<em>{j=i+1}^{n} \omega</em>{ij}x_ix_j$$</p>
+<h3 id="FM求解"><a href="#FM求解" class="headerlink" title="FM求解"></a>FM求解</h3><p>从上面的式子可以很容易看出，组合部分的特征相关参数共有n(n−1)2个。但是如第二部分所分析，在数据很稀疏的情况下，满足xi,xj都不为0的情况非常少，这样将导致$ω_{ij}$无法通过训练得出。</p>
+<p>为了求出$ω_{ij}$，我们对每一个特征分量$x_i$引入辅助向量$V<em>i=(v</em>{i1},v<em>{i2},⋯,v</em>{ik})$。即令$ω_{ij} = v_iv_j^T$。</p>
+<p>那么$$\sum<em>{i=1}^{n-1}\sum</em>{j=i+1}^{n} \omega_{ij}x_ix<em>j = \sum</em>{i=1}^{n-1}\sum_{j=i+1}^{n}<v_i,v_j>x_i,x_j$$</v_i,v_j></p>
+<center><img src="/img/posts/fm_inference" alt=""></center>
+
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="http://blog.csdn.net/bitcarmanlee/article/details/52143909" target="_blank" rel="noopener">FM算法详解</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/14/生成模型和判别模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/14/生成模型和判别模型/" itemprop="url">生成模型和判别模型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-14T16:22:09+08:00">
+                2018-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>generative algorithm</strong> models how the data was generated in order to categorize a signal. It asks the question: based on my generation assumptions, which category is most likely to generate this signal?A </p>
+<p><strong>discriminative algorithm</strong> does not care about how the data was generated, it simply categorizes a given signal.</p>
+<h3 id="生成方法和判别方法"><a href="#生成方法和判别方法" class="headerlink" title="生成方法和判别方法"></a>生成方法和判别方法</h3><p> 监督学习方法又分生成方法（Generative approach）和判别方法（Discriminative approach），所学到的模型分别称为生成模型（Generative Model）和判别模型（Discriminative Model）。</p>
+<h5 id="判别方法"><a href="#判别方法" class="headerlink" title="判别方法"></a>判别方法</h5><p>由数据直接学习决策函数Y=f(X)或者条件概率分布P(Y|X)作为预测的模型，即判别模型。基本思想是有限样本条件下建立判别函数，不考虑样本的产生模型，直接研究预测模型。典型的判别模型包括k近邻，感知级，决策树，支持向量机等。</p>
+<h5 id="生成方法"><a href="#生成方法" class="headerlink" title="生成方法"></a>生成方法</h5><p>由数据学习联合概率密度分布P(X,Y)，然后求出条件概率分布P(Y|X)作为预测的模型，即生成模型：P(Y|X)= P(X,Y)/ P(X)。基本思想是首先建立样本的联合概率概率密度模型P(X,Y)，然后再得到后验概率P(Y|X)，再利用它进行分类，就像上面说的那样。注意了哦，这里是先求出P(X,Y)才得到P(Y|X)的，然后这个过程还得先求出P(X)。</p>
+<h3 id="生成模型和判别模型的优缺点"><a href="#生成模型和判别模型的优缺点" class="headerlink" title="生成模型和判别模型的优缺点"></a>生成模型和判别模型的优缺点</h3><p>在监督学习中，两种方法各有优缺点，适合于不同条件的学习问题。</p>
+<p><strong>判别方法的特点：</strong>判别方法直接学习的是决策函数Y=f(X)或者条件概率分布P(Y|X)。不能反映训练数据本身的特性。但它寻找不同类别之间的最优分类面，反映的是异类数据之间的差异。直接面对预测，往往学习的准确率更高。由于直接学习P(Y|X)或P(X)，可以对数据进行各种程度上的抽象、定义特征并使用特征，因此可以简化学习问题。</p>
+<p><strong>生成方法的特点：</strong>上面说到，生成方法学习联合概率密度分布P(X,Y)，所以就可以从统计的角度表示数据的分布情况，能够反映同类数据本身的相似度。但它不关心到底划分各类的那个分类边界在哪。生成方法可以还原出联合概率分布P(Y|X)，而判别方法不能。生成方法的学习收敛速度更快，即当样本容量增加的时候，学到的模型可以更快的收敛于真实模型，当存在隐变量时，仍可以用生成方法学习。此时判别方法就不能用。</p>
+<h3 id="生成模型和判别模型的联系"><a href="#生成模型和判别模型的联系" class="headerlink" title="生成模型和判别模型的联系"></a>生成模型和判别模型的联系</h3><p>由生成模型可以得到判别模型，但由判别模型得不到生成模型。</p>
+<p>生成模型更一般更普适。不过判别模型更直接，更简单。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="http://blog.csdn.net/zouxy09/article/details/8195017" target="_blank" rel="noopener">生成模型与判别模型</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/14/朴素贝叶斯和逻辑回归/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/14/朴素贝叶斯和逻辑回归/" itemprop="url">朴素贝叶斯 VS 逻辑回归</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-14T16:13:05+08:00">
+                2018-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p>Naive Bayes是一个生成模型，在计算P(y|x)之前，先要从训练数据中计算P(x|y)和P(y)的概率，从而利用贝叶斯公式计算P(y|x)。</p>
+<p>Logistic Regression是一个判别模型，它通过在训练数据集上最大化判别函数P(y|x)学习得到，不需要知道P(x|y)和P(y)。</p>
+</li>
+<li><p>Naive Bayes是建立在条件独立假设基础之上的，设特征X含有n个特征属性（X1，X2，…Xn），那么在给定Y的情况下，X1，X2，…Xn是条件独立的。</p>
+<p>Logistic Regression的限制则要宽松很多，如果数据满徐条件独立假设，Logistic Regression能够取得非常好的效果；当数据不满度条件独立假设时，Logistic Regression仍然能够通过调整参数让模型最大化的符合数据的分布，从而训练得到在现有数据集下的一个最优模型。</p>
+</li>
+<li><p>当数据集比较小的时候，应该选用Naive Bayes，为了能够取得很好的效果，数据的需求量为O(log n)</p>
+<p>当数据集比较大的时候，应该选用Logistic Regression，为了能够取得很好的效果，数据的需求量为O( n)</p>
+</li>
+<li><p>Naive Bayes运用了比较严格的条件独立假设，为了计算P(y|x)，我们可以利用统计的方法统计数据集中P(x|y)和P(y)出现的次数，从而求得P(x|y)和P(y)。因而其所需的数据量要小一些，为O(log n).</p>
+<p>Logistic Regression在计算时，是在整个参数空间进行线性搜索的，需要的数据集就更大，为O( n)</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="changzeng" />
+          <p class="site-author-name" itemprop="name">changzeng</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
 
     </div>
+  </aside>
 
-    <!-- Sidebar Image -->
-    
 
-</aside>
+        
+      </div>
+    </main>
 
-                    
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-        <a href="https://twitter.com/twitter" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
-                <span class="visuallyhidden">Twitter</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Facebook -->
-    
-        <a href="https://www.facebook.com/facebook" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
-                <span class="visuallyhidden">Facebook</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Google + -->
-    
-        <a href="https://www.google.com/" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
-                <span class="visuallyhidden">Google Plus</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Weibo -->
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-    
-    <!-- V2EX -->
-    
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">changzeng</span>
 </div>
 
 
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Geek Liao
-            
-        </div>
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
 
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
 
 
-                    <!-- Import JS File -->
+        
 
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
-
-
-
-    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
-
-
-
-    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- UC Browser Compatible -->
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
-
-<!-- Import prettify js  -->
-
-
-
-<!-- Window Load -->
-<!-- add class for prettify -->
-<script type="text/ls-javascript" id="window-load">
-    $(window).on('load', function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
+        
+      </div>
+    </footer>
 
     
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-<!-- MathJax Load-->
-
-
-<!-- Bing Background -->
-
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
-
-    // Start Queue
-    $(document).ready(function(){
-        setInterval(function(){
-            queue.execNext();
-        },200);
-    });
-</script>
-
-<!-- Custom Footer -->
 
 
 
-<script>
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
 
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
-        }
-    })()
-console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
 
-                </main>
-            </div>
-        <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
@@ -1318,6 +2002,53 @@ console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viose
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </body>
-    
 </html>
