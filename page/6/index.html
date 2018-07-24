@@ -260,6 +260,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/15/经典DP-Levenshtein距离/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/15/经典DP-Levenshtein距离/" itemprop="url">经典DP-Levenshtein距离</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-15T13:45:21+08:00">
+                2018-01-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/dynamic-programing/" itemprop="url" rel="index">
+                    <span itemprop="name">dynamic programing</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p><a href="https://en.wikipedia.org/wiki/Levenshtein_distance" target="_blank" rel="noopener">Levenshtein距离</a>是一种计算两个字符串间的差异程度的字符串度量（string metric）。我们可以认为Levenshtein距离就是从一个字符串修改到另一个字符串时，其中编辑单个字符（比如修改、插入、删除）所需要的最少次数。俄罗斯科学家<a href="https://en.wikipedia.org/wiki/Vladimir_Levenshtein" target="_blank" rel="noopener">Vladimir Levenshtein</a>于1965年提出了这一概念。</p>
+<h3 id="转移方程"><a href="#转移方程" class="headerlink" title="转移方程"></a>转移方程</h3><p>$$lev<em>{A,B}(i,j) = \begin{cases} i &amp;, j = 0 \ j &amp;, i = 0 \ min\begin{cases} lev</em>{a,b}(i, j-1) + 1 \ lev<em>{a,b}(i-1, j) + 1 \ lev</em>{a,b}(i-1,j-1)+1,(a_i \ne b_i) \end{cases} &amp;, otherwise \end{cases}$$</p>
+<h3 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">levenshtein</span><span class="params">(str_a, str_b)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">charAt</span><span class="params">(s, i)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> s[i<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">    dp = [[<span class="number">0</span>]*(len(str_b)+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(str_a)+<span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(str_a)+<span class="number">1</span>):</span><br><span class="line">        dp[i][<span class="number">0</span>] = i</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(str_b)+<span class="number">1</span>):</span><br><span class="line">        dp[<span class="number">0</span>][i] = i</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(str_a)+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, len(str_b)+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> charAt(str_a, i) == charAt(str_b, j):</span><br><span class="line">                dp[i][j] = dp[i<span class="number">-1</span>][j<span class="number">-1</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dp[i][j] = min(dp[i<span class="number">-1</span>][j], dp[i][j<span class="number">-1</span>], dp[i<span class="number">-1</span>][j<span class="number">-1</span>])+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dp[len(str_a)][len(str_b)]</span><br></pre></td></tr></table></figure>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="http://www.cnblogs.com/BlackStorm/p/5400809.html" target="_blank" rel="noopener">字符串编辑距离（Levenshtein距离）算法</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/15/query粗排/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1628,157 +1775,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/14/感知机、线性回归、逻辑回归/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="changzeng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Geek Liao">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/year/01/14/感知机、线性回归、逻辑回归/" itemprop="url">感知机、线性回归、逻辑回归</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-14T15:51:05+08:00">
-                2018-01-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">machine learning</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>感知机、线性回归、逻辑回归是三中和容易混淆的模型，三者的主要区别在于激活函数的选择。</p>
-<p>对于感知机来说，它的激活函数为：</p>
-<p>$$h(a)=\begin{cases}1, a\geq 0 \0, a&lt;0 　　    \end{cases}$$</p>
-<p>对于线性回归模型来说，它的激活函数为：</p>
-<p>$$h(a)=a$$</p>
-<p>对于逻辑回归模型来说，它的激活函数则为:</p>
-<p>$$h(a) = \frac{1}{1 + e^{-a}}$$</p>
-<h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><p>感知机处理的数据必须是线性可分的，对于线性不可分的数据，感知机将显得十分的鸡肋。</p>
-<p>LR使得最终结果有了概率解释的能力（将结果限制在0-1之间），sigmoid为平滑函数，能够得到更好的分类结果，而step function为分段函数，对于分类的结果处理比较粗糙，非0即1，而不是返回一个分类的概率。</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://blog.csdn.net/wgdzz/article/details/46462813" target="_blank" rel="noopener">http://blog.csdn.net/wgdzz/article/details/46462813</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1829,7 +1825,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-count">72</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1840,7 +1836,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">Kategorien</span>
               
             </div>

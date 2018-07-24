@@ -260,6 +260,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/17/算法题汇总（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/17/算法题汇总（一）/" itemprop="url">算法题汇总（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-17T17:26:44+08:00">
+                2018-01-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法题/" itemprop="url" rel="index">
+                    <span itemprop="name">算法题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="循环相等字符串"><a href="#循环相等字符串" class="headerlink" title="循环相等字符串"></a>循环相等字符串</h3><h5 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h5><p>给定两个字符串，将这两个字符串分别收尾连接，判断是否相等。</p>
+<h5 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h5><p>input: “abc” “bca”</p>
+<p>output: True</p>
+<h5 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h5><p>将任意字符接在自己后面，判断另一个字符串是否出现在新的字符串中。</p>
+<h3 id="最相近切分—0-1背包问题"><a href="#最相近切分—0-1背包问题" class="headerlink" title="最相近切分—0-1背包问题"></a>最相近切分—0-1背包问题</h3><p>将数组分为两部分，使得两部分的和最接近，返回两部分的差值。</p>
+<p>动态规划的解法。求得array的和sum，问题转化为：在array中选取若干个元素，使得这些元素的和&lt;=sum/2，且是最接近sum/2的元素集合。</p>
+<p>开一个数组：int[][]f=new int[length+1][sum/2+1]</p>
+<p>状态方程：f[i][j]=Max(f[i-1][j-array[i]]+array[i],f[i-1][j])</p>
+<p>解释：f[i][j]表示array中i个元素的和&lt;=j，且是最接近j的元素集合。f[i-1][j-array[i]]表示array中i-1个元素的和最接近j-array[i]，所以f[i][j]应该是[i-1][j-array[i]]+array[i]和f[i-1][j]中最大的那个。有点像0-1背包问题。</p>
+<h3 id="用链表表示十进制，两个链表相加"><a href="#用链表表示十进制，两个链表相加" class="headerlink" title="用链表表示十进制，两个链表相加"></a>用链表表示十进制，两个链表相加</h3><h3 id="链表倒置"><a href="#链表倒置" class="headerlink" title="链表倒置"></a>链表倒置</h3><h3 id="数字串分类"><a href="#数字串分类" class="headerlink" title="数字串分类"></a>数字串分类</h3><h5 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h5><p>一个整数数组，设计方法，让所有奇数在前，所有偶数在后。扩展：假设不止奇数偶数，有三种数，第一种放前面，第二种放中间，第三种放最后，该怎么办。</p>
+<h5 id="解法-1"><a href="#解法-1" class="headerlink" title="解法"></a>解法</h5><p>二分类的情况下设置两个指针。</p>
+<p>多分类的情况下也设置两个指针，但是多次分类。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/17/python-argparse/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1230,7 +1383,14 @@
       
         
           
-            
+            <a id="more"></a>
+<h3 id="牛顿法"><a href="#牛顿法" class="headerlink" title="牛顿法"></a>牛顿法</h3><p>对目标函数$f(x)$在$x$处进行二阶泰勒展开：</p>
+<p>$$f(x + \Delta x) = f(x) + f’(x)\Delta x + \frac{1}{2}f’’(x)\Delta x^2$$</p>
+<p>延$\Delta x$的方向应使得函数的取值最大即上升/下降最开，所以应使得上述函数对$\Delta x$的导数为0。所以，两边同时对$\Delta x$求导：</p>
+<p>$$f’(x + \Delta x)= f’(x) + f’’(x)\Delta x = 0$$</p>
+<p>所以：</p>
+<p>$$\Delta x = - \frac{f’(x)}{f’’(x)}$$</p>
+
           
         
       
@@ -1556,153 +1716,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/15/经典DP-Levenshtein距离/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="changzeng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Geek Liao">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/year/01/15/经典DP-Levenshtein距离/" itemprop="url">经典DP-Levenshtein距离</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-15T13:45:21+08:00">
-                2018-01-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/dynamic-programing/" itemprop="url" rel="index">
-                    <span itemprop="name">dynamic programing</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p><a href="https://en.wikipedia.org/wiki/Levenshtein_distance" target="_blank" rel="noopener">Levenshtein距离</a>是一种计算两个字符串间的差异程度的字符串度量（string metric）。我们可以认为Levenshtein距离就是从一个字符串修改到另一个字符串时，其中编辑单个字符（比如修改、插入、删除）所需要的最少次数。俄罗斯科学家<a href="https://en.wikipedia.org/wiki/Vladimir_Levenshtein" target="_blank" rel="noopener">Vladimir Levenshtein</a>于1965年提出了这一概念。</p>
-<h3 id="转移方程"><a href="#转移方程" class="headerlink" title="转移方程"></a>转移方程</h3><p>$$lev<em>{A,B}(i,j) = \begin{cases} i &amp;, j = 0 \ j &amp;, i = 0 \ min\begin{cases} lev</em>{a,b}(i, j-1) + 1 \ lev<em>{a,b}(i-1, j) + 1 \ lev</em>{a,b}(i-1,j-1)+1,(a_i \ne b_i) \end{cases} &amp;, otherwise \end{cases}$$</p>
-<h3 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">levenshtein</span><span class="params">(str_a, str_b)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">charAt</span><span class="params">(s, i)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> s[i<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">    dp = [[<span class="number">0</span>]*(len(str_b)+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(str_a)+<span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(str_a)+<span class="number">1</span>):</span><br><span class="line">        dp[i][<span class="number">0</span>] = i</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(str_b)+<span class="number">1</span>):</span><br><span class="line">        dp[<span class="number">0</span>][i] = i</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(str_a)+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, len(str_b)+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> charAt(str_a, i) == charAt(str_b, j):</span><br><span class="line">                dp[i][j] = dp[i<span class="number">-1</span>][j<span class="number">-1</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dp[i][j] = min(dp[i<span class="number">-1</span>][j], dp[i][j<span class="number">-1</span>], dp[i<span class="number">-1</span>][j<span class="number">-1</span>])+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dp[len(str_a)][len(str_b)]</span><br></pre></td></tr></table></figure>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
-<li><a href="http://www.cnblogs.com/BlackStorm/p/5400809.html" target="_blank" rel="noopener">字符串编辑距离（Levenshtein距离）算法</a></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1753,7 +1766,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-count">72</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1764,7 +1777,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">Kategorien</span>
               
             </div>
