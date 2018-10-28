@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -260,6 +260,307 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/18/深度学习中防止过拟合的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/18/深度学习中防止过拟合的方法/" itemprop="url">深度学习中防止过拟合的方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-18T23:06:37+08:00">
+                2018-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/deep-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">deep learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>机器学习的模型训练中，导致模型模型过拟合主要有三种原因，数据过少，参数过多和过度训练。其实从某种意义上来说，数据过少和参数过多是等价的。</p>
+<h3 id="1-参数范数惩罚"><a href="#1-参数范数惩罚" class="headerlink" title="1.参数范数惩罚"></a>1.参数范数惩罚</h3><p>常用的有L1和L2正则化。</p>
+<h3 id="2-数据增强"><a href="#2-数据增强" class="headerlink" title="2.数据增强"></a>2.数据增强</h3><p>让模型泛化的能力更好的最好办法就是使用更多的训练数据进行训练,但是在实践中,我们拥有的数据是有限的,解决这一问题可以人为的创造一些假数据添加到训练集中.<br>一个具体的例子:<br>在AlexNet中,将256<em>256图像随机的截取224</em>224大小,增加了许多的训练样本,同时可以对图像进行左右翻转,增加样本的个数,实验的结果可以可降低1%的误差.<br>在神经网络中输入噪声也可以看做是数据增强的一种方式.</p>
+<h3 id="3-提前终止"><a href="#3-提前终止" class="headerlink" title="3.提前终止"></a>3.提前终止</h3><p>如下图所示(图片来源deep learning),当随着模型的能力提升,训练集的误差会先减小再增大,这样可以提前终止算法减缓过拟合现象.关于算法的具体流程参考deep learning.</p>
+<h3 id="4-参数绑定与参数共享"><a href="#4-参数绑定与参数共享" class="headerlink" title="4.参数绑定与参数共享"></a>4.参数绑定与参数共享</h3><p>在卷积神经网络CNN中(<a href="http://blog.csdn.net/taoyanqi8932/article/details/53966407" target="_blank" rel="noopener">计算机视觉与卷积神经网络 </a>),卷积层就是其中权值共享的方式,一个卷积核通过在图像上滑动从而实现共享参数,大幅度减少参数的个数,用卷积的形式是合理的,因为对于一副猫的图片来说,右移一个像素同样还是猫,其具有局部的特征.这是一种很好的缓解过拟合现象的方法.<br>同样在RNN中用到的参数共享,在其整条时间链上可以进行参数的共享,这样才使得其能够被训练.</p>
+<h3 id="5-bagging-和其他集成方法"><a href="#5-bagging-和其他集成方法" class="headerlink" title="5.bagging 和其他集成方法"></a>5.bagging 和其他集成方法</h3><p>其实bagging的方法是可以起到正则化的作用,因为正则化就是要减少泛化误差,而bagging的方法可以组合多个模型起到减少泛化误差的作用.<br>在深度学习中同样可以使用此方法,但是其会增加计算和存储的成本.</p>
+<h3 id="6-Dropout"><a href="#6-Dropout" class="headerlink" title="6.Dropout"></a>6.Dropout</h3><p>Dropout提供了一种廉价的Bagging集成近似,能够训练和评估指数级数量的神经网络。dropout可以随机的让一部分神经元失活,这样仿佛是bagging的采样过程,因此可以看做是bagging的廉价的实现.<br>但是它们训练不太一样,因为bagging,所有的模型都是独立的,而dropout下所有模型的参数是共享的.<br>通常可以这样理解dropout:假设我们要判别一只猫,有一个神经元说看到有毛就是猫,但是如果我让这个神经元失活,它还能判断出来是猫的话,这样就比较具有泛化的能力,减轻了过拟合的风险.</p>
+<p>第二个理解dropout的方法就是，参数过多会倒置过拟合，Dropout会随机让一部分参数失效，减少了参数的个数，从而防止了过拟合。</p>
+<h3 id="7-辅助分类节点-auxiliary-classifiers"><a href="#7-辅助分类节点-auxiliary-classifiers" class="headerlink" title="7. 辅助分类节点(auxiliary classifiers)"></a>7. 辅助分类节点(auxiliary classifiers)</h3><p>在Google Inception V1中,采用了辅助分类节点的策略,即将中间某一层的输出用作分类,并按一个较小的权重加到最终的分类结果中,这样相当于做了模型的融合,同时给网络增加了反向传播的梯度信号,提供了额外的正则化的思想.</p>
+<h3 id="8-Batch-Normalization"><a href="#8-Batch-Normalization" class="headerlink" title="8. Batch Normalization"></a>8. Batch Normalization</h3><p>在Google Inception V2中所采用,是一种非常有用的正则化方法,可以让大型的卷积网络训练速度加快很多倍,同时收敛后分类的准确率也可以大幅度的提高.<br>BN在训练某层时,会对每一个mini-batch数据进行标准化(normalization)处理,使输出规范到N(0,1)的正太分布,减少了Internal convariate shift(内部神经元分布的改变),传统的深度神经网络在训练是,每一层的输入的分布都在改变,因此训练困难,只能选择用一个很小的学习速率,但是每一层用了BN后,可以有效的解决这个问题,学习速率可以增大很多倍.</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="http://blog.csdn.net/taoyanqi8932/article/details/71101699" target="_blank" rel="noopener">深度学习防止过拟合的方法</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/18/推荐系统-DCG和NDCG/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/18/推荐系统-DCG和NDCG/" itemprop="url">DCG和NDCG</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-18T14:14:32+08:00">
+                2018-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/推荐系统/" itemprop="url" rel="index">
+                    <span itemprop="name">推荐系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="DCG-Discounted-Cumulative-Gain"><a href="#DCG-Discounted-Cumulative-Gain" class="headerlink" title="DCG(Discounted Cumulative Gain)"></a>DCG(<strong>Discounted Cumulative Gain</strong>)</h3><p>在推荐系统中，我们通常有一些希望被推荐出来的文档，但是这些文档的排名会影响推荐系统的质量，因为一篇我们希望被检索出来的文档排在第一位和排在最后一位或者是中间一位对于推荐系统有非常大的影响。显然排名越靠前越好。</p>
+<p>DCG是一种对排序结果的评价机制，并且考虑了排序的位置。</p>
+<p>$$DCP_p = rel<em>1 + \sum</em>{i=2}^P \frac{rel_i}{log_2(i)}$$</p>
+<p>其中$rel_i$是我们期望排在i位置的文档获得的分数。</p>
+<h3 id="nDCG"><a href="#nDCG" class="headerlink" title="nDCG"></a>nDCG</h3><p>$$nDCG_p = \frac{DCG_p}{IDCG_p}$$</p>
+<p>因为不同的query的DCG值是不一样的，直接对不同的query比较DCG没有任何意义，所以一个好的方法就是比较他们的DCG饱和程度，对于任何一个query都有一个饱和的DCG值这个值即 <strong>IDCG（Ideal DCG）</strong>。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/17/算法题汇总（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -289,7 +590,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-17T17:26:44+08:00">
                 2018-01-17
@@ -310,7 +611,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -442,7 +743,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-17T17:17:40+08:00">
                 2018-01-17
@@ -463,7 +764,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -587,7 +888,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-17T16:38:13+08:00">
                 2018-01-17
@@ -608,7 +909,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -731,7 +1032,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-17T15:41:54+08:00">
                 2018-01-17
@@ -752,7 +1053,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -878,7 +1179,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-17T15:03:48+08:00">
                 2018-01-17
@@ -899,7 +1200,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1020,7 +1321,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-17T14:45:41+08:00">
                 2018-01-17
@@ -1041,7 +1342,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1175,7 +1476,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-17T12:20:56+08:00">
                 2018-01-17
@@ -1196,7 +1497,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1319,7 +1620,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-16T16:11:26+08:00">
                 2018-01-16
@@ -1340,7 +1641,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1390,297 +1691,6 @@
 <p>$$f’(x + \Delta x)= f’(x) + f’’(x)\Delta x = 0$$</p>
 <p>所以：</p>
 <p>$$\Delta x = - \frac{f’(x)}{f’’(x)}$$</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/15/最大熵模型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="changzeng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Geek Liao">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/year/01/15/最大熵模型/" itemprop="url">最大熵模型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-15T20:40:59+08:00">
-                2018-01-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">machine learning</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="熵"><a href="#熵" class="headerlink" title="熵"></a>熵</h3><h5 id="普通熵"><a href="#普通熵" class="headerlink" title="普通熵"></a>普通熵</h5><p>$$H(x) = - \sum_{x \in X} p(x)logp(x)$$</p>
-<h5 id="条件熵"><a href="#条件熵" class="headerlink" title="条件熵"></a>条件熵</h5><p>$$\begin{align}H(Y \mid X) &amp;= \sum<em>{x \in X} p(x)H(Y \mid X=x) \ &amp;= - \sum</em>{x \in X} p(x) \sum<em>{y \in Y} p(y|x)logp(y|x) \ &amp;= -\sum</em>{x \in X}\sum_{y \in Y}p(x,y)logp(y \mid x) \end{align}$$</p>
-<h5 id="相对熵"><a href="#相对熵" class="headerlink" title="相对熵"></a>相对熵</h5><p>$$\begin{align}D_{KL}(p || q) &amp;= E<em>p[log \frac{p(x)}{q(x)}] = \sum</em>{x \in X} p(x)log\frac{p(x)}{q(x)} \ &amp;= H_p(q) -H(p) \end{align}$$</p>
-<h5 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h5>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/15/逻辑回归为什么用sigmoid函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="changzeng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Geek Liao">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/year/01/15/逻辑回归为什么用sigmoid函数/" itemprop="url">逻辑回归为什么用sigmoid函数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-15T20:38:16+08:00">
-                2018-01-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">machine learning</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>总结了网上的资料，原因大致有以下几点。但是啥是指数族我是真不懂啊，不懂的东西我也不贴了。</p>
-<ol>
-<li>将实数映射为从0到1的条件概率。</li>
-<li>可导且导数计算方便。</li>
-<li>(最重要的一点)sigmoid函数是非线性的，使得模型具有更复杂的表达能力。</li>
-</ol>
 
           
         
@@ -1766,8 +1776,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">72</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1777,8 +1787,8 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">23</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">categories</span>
               
             </div>
           
@@ -1830,7 +1840,7 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -260,6 +260,314 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/13/crf综述/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/13/crf综述/" itemprop="url">条件随机场</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-13T18:51:08+08:00">
+                2018-01-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>$p(y|x)$是crf的核心，这个公式的含义就是我们给定一个字符串，然后求解任意给定的标注序列的概率。比如在分词应用中，我们需要标注的label有$B,M,E,S$，那么假定我们给定一个字符串$我爱北京天安门$，那么crf就需要计算出任意给定的标注序列的概率，比如我们现在给定的标注序列是$B,E,B,E,B,M,E$，所有$p(y|x)$所需要计算的概率就是$p(B,E,B,E,B,M,E|我爱北京天安门)$。</p>
+<h3 id="数学形式"><a href="#数学形式" class="headerlink" title="数学形式"></a>数学形式</h3><p>那么在数学上我们又该怎样表示这样一种关系呢？首先我们在任意位置抽取特征，然后训练得到这些特征的权值，最后通过这些训练的权值我们就能用来对新的数据做估计。</p>
+<p>给定序列$X=(X_1,X_2,…,X_n)$，$Y=(Y_1,Y_2,…,Y_n)$，那么：</p>
+<p>$$p(Y|X) = \frac{1}{Z(X)} exp(\sum_{i,k}\lambda_kt<em>k(y</em>{i-1},y<em>i,x,i) + \sum</em>{i,l}\mu_ls_l(y_i,x,i))$$</p>
+<p>其中：</p>
+<p>$$Z(X) = \sum<em>y exp(\sum</em>{i,k} \lambda_kt<em>k(y</em>{i-1,y<em>i,x,i}) + \sum</em>{i,l}\mu_ls_l(y_i,x,i))$$</p>
+<p>在上面的公式中$t_k$和$\lambda_k$是二元特征及其对应的特征值，$s_l$和$\mu_l$是一元特征及其对应的特征值。所以crf的条件概率就能通过所有特征的权值的和来计算。</p>
+<h3 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h3><p>L-BFGS属于无约束最小化算法，该算法在一些能用上批处理优化的ML问题中特别受欢迎。对于更大的数据集，则常用SGD方法，因为SGD只需要很少的迭代次数就能达到收敛。</p>
+<p>给定训练样本${(x^m,y^m)}, m = {1,…,M}$，则CRF模型的对数似然函数为：</p>
+<p>$$L(\lambda) = \sum_m log(P(y^m|x^m,\lambda)) = \sum_m(\sum_j \lambda_j f_j(x^m,y^m) - logZ(x^m))$$</p>
+<p>在这里$f_j$和$\lambda_j$是特征及其所对应的特征值。我们的目标就是计算$\lambda$。</p>
+<h3 id="L-BGFS"><a href="#L-BGFS" class="headerlink" title="L-BGFS"></a>L-BGFS</h3><p>搜索方向$d_k = -B^{-1}_k * g_k$</p>
+<p><img src="bfgs_B.png" alt=""></p>
+<p>更新参数$x_{k+1} = x_k + \alpha d_k$ </p>
+<h3 id="训练方法对比"><a href="#训练方法对比" class="headerlink" title="训练方法对比"></a>训练方法对比</h3><p><img src="crf_optimization.png" alt=""></p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ol>
+<li><a href="http://www.hankcs.com/ml/l-bfgs.html" target="_blank" rel="noopener">http://www.hankcs.com/ml/l-bfgs.html</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/13/LDA与Gibbs-Sampling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="changzeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Geek Liao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/year/01/13/LDA与Gibbs-Sampling/" itemprop="url">LDA与Gibbs Sampling</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-13T02:13:47+08:00">
+                2018-01-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>主题模型的应用十分广泛，LDA是其中最基础的一种。但是这个模型对于一般人来说十分的神秘，因为其中包含了很多的数学知识。初识LDA的时候我虽然把各种资料看了一遍又一遍，但是任然无法理解其中的奥秘。但是当我理解之后再回过头来看这些资料发现他们讲的确实详尽而有基础，但是它们都没有命中要害，而是把过多的部分放在了不必要的数学公式上了。当然，数学公式是理解模型的关键，但是如果一开始就从数学公式开始长篇大论不免会让不少人丧失了解的兴趣，而且也会让人觉得晦涩难懂。</p>
+<p>LDA的目的就是为了计算每一篇文章的主题分布，以及每一主题的词分布。LDA模型分为在线模型和非在线模型，也就是说，非在线模型的主题分布是一次性计算，而在在线模型中一篇文章的主题分布可以通过已经训练的模型预估。</p>
+<p>LDA的核心莫过于吉布斯采样，前面说过主题模型的作用就是要确定每一篇文章的主题分布，主题分布即文档中每一主题的出现频率。所以吉布斯采样的核心就是要为文档中的每一个词确定一个主题。那么这个主题如何确定呢？首先我们通过公式计算每一主题的概率，然后在得到的概率分布中随机选择一个。对整个语料库多次重复上述的采样过程，我们就能得到一个确定的主题分布。这就是吉布斯采样。</p>
+<p>那么现在的问题就是，如何计算语料库中任意一词所属主题的概率以及为何主题分布会收敛。</p>
+<p>先来说说收敛的问题，熟悉page rank的朋友一看到上面这个过程应该就是似曾相识，在page rank中，我们不停的遍历每一个网页并同时为其计算重要度，若干次迭代后网页的重要度便会收敛。其实我所说的page rank和吉布斯采样本质上来说并没有什么区别，都是从一个状态转移到另一个状态。然后最后状态收敛。熟悉马儿可夫链的同学一看到状态转移和收敛就很兴奋了，这不就是一个马尔科夫随机过程吗。对的，没错确实是这样。所以这样一种方法又被叫做蒙特卡罗-马尔科夫随机采样法，这种算法是一定会收敛的，但是证明很复杂也不要求要掌握，所以知道就行。</p>
+<p>关于计算语料中任意词所属主题的概率问题。我想大部分的博客都已讲烂，我也不想赘述。但是我想说明的一点就是什么是共轭先验分布。共轭先验分布就是形式相同的分布，也就是说他们的概率都是用同一个公式计算的。</p>
+<p>我想，明白了这个，现在你只需要稍微花一点时间，LDA便能信手拈来了。</p>
+<p>最后，还想补充的就是先验更新的问题。我建议你在对LDA有了一个整体的认识之后再来读下面的这些。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://changzeng.github.io/year/01/12/经典DP-最长不降子序列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -289,7 +597,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-12T00:19:33+08:00">
                 2018-01-12
@@ -310,7 +618,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -437,7 +745,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-11T22:54:55+08:00">
                 2018-01-11
@@ -458,7 +766,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -593,8 +901,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">72</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -604,8 +912,8 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">23</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">categories</span>
               
             </div>
           
@@ -657,7 +965,7 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
